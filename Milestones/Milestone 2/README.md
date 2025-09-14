@@ -7,6 +7,7 @@ You've successfully met all the major requirements of the assignment, including 
 
 > [!IMPORTANT]
 > View added [Conclusion](#conclusion)
+> Video for endpoints but in addition to Milestone 2 - meant for Milestone 3[Loom Link](https://www.loom.com/share/6127053b3eb04a31be6f7b0c49c198cc?sid=72f7500e-fca3-4a24-b04a-dd243ac8e6e3)
 
 ## Introduction
 > [!NOTE]
