@@ -1,3 +1,5 @@
+// re-used from music API
+
 import { createPool, Pool } from 'mysql';
 let pool: Pool | null = null;
 

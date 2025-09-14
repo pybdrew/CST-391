@@ -11,7 +11,7 @@ export const readArtists: RequestHandler = async (req: Request, res: Response) =
     } catch (error) {
         console.error('[artists.controller][ReadArtists][Error] ', error);
         res.status(500).json({
-            message: 'There was an error whem fetching artists'
+            message: 'There was an error when fetching artists'
         });
     }
 };
