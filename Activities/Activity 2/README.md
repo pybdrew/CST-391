@@ -3,6 +3,7 @@
 - 14 September 2025
 
 --- 
+
 ## Introduction
 
 In this activity, I will install the required development tools for Angular and validate the setup by creating and running a simple test application. This exercise helps me confirm that my development environment is correctly configured and allows me to become familiar with the basic Angular workflow, including project creation, compilation, and viewing the application in a browser.
