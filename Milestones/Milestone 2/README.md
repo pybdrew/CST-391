@@ -47,7 +47,7 @@ without confusion.
 - translations.translation → verses.translation (one-to-many)
 - verses.id → VerseComments.verse_id (one-to-many)
 
-## Initial UI Sitemap (Text)
+## UI Sitemap (Text)
 
 1. Home Page
     1. Browse Verses
