@@ -9,7 +9,7 @@
 > [!IMPORTANT] 
 > View [Challenges, Issues, and Lessons Learned](#challenges-issues-and-lessons-learned)  
 > Video for endpoints: [Loom Link](https://www.loom.com/share/6127053b3eb04a31be6f7b0c49c198cc?sid=72f7500e-fca3-4a24-b04a-dd243ac8e6e3)  
-> View PowerPoint version here: [Milestone 3 PowerPoint](./Milestone%203.pptx)  
+> View PowerPoint .PDF version here: [Milestone 3 PowerPoint](./Milestone%203.pdf)  
 
 
 Inclusion is a Christian-themed personal study web app that enables users to read, update, and delete personal study notes tied to specific Bible verses and translations. This milestone focuses on implementing the REST API in TypeScript using Express/Node.js with a MySQL database. The API now supports CRUD operations, allowing users to retrieve existing comments, update their study notes, and remove entries as needed. Postman was used to test endpoints and verify functionality, while MySQL Workbench confirmed database changes. These enhancements bring the application closer to its goal of providing a reliable and interactive tool for scripture engagement.
