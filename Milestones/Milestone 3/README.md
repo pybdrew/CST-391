@@ -117,6 +117,7 @@ deleteComment(id), listComments(verse_id)
 |--|--|--|--|
 |GET|/comments|Retrieve all comments|[Postman](./images/GET%20all.png)|
 |GET|/comments/:id|Retrieve comment by id|[Postman](./images/GET%20id.png)|
+|POST|/comments|Create a new comment|[Postman](./images/POST.png)|
 |PUT|/comments/:id|Update comment by id|[Postman](./images/PUT.png)|
 |DELETE|/comments/:id|Delete comment by id|[Postman](./images/DEL.png)|
 
