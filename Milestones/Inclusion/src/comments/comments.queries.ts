@@ -10,13 +10,15 @@ export const commentQueries = {
     FROM VerseComments 
     WHERE id = ?
   `,
-
+  createComment: `
+  INSERT INTO VerseComments (verse_id, comment_text, translation)
+  VALUES (?, ?, ?)
+`,
   updateComment: `
     UPDATE VerseComments 
     SET comment_text = ?, translation = ? 
     WHERE id = ?
   `,
-
   deleteComment: `
     DELETE FROM VerseComments 
     WHERE id = ?

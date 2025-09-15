@@ -6,8 +6,9 @@
 You've successfully met all the major requirements of the assignment, including using Markdown professionally, providing an introduction with functional requirements, an ER diagram for the backend, a sitemap with wireframes, a class diagram, and a discussion of project risks. The only item I see missing is a Conclusion, please add a Conclusion.
 
 > [!IMPORTANT]  
-> View added [Conclusion](#conclusion)  
-> Video for endpoints (in addition to Milestone 2, meant for Milestone 3): [Loom Link](https://www.loom.com/share/6127053b3eb04a31be6f7b0c49c198cc?sid=72f7500e-fca3-4a24-b04a-dd243ac8e6e3)
+> View the added [Conclusion](#conclusion)  
+> Quick link to the [Code](../Inclusion/)
+
 
 
 ## Introduction
@@ -118,6 +119,7 @@ deleteComment(id), listComments(verse_id)
 |--|--|--|--|
 |GET|/comments|Retrieve all comments|[Postman](./images/GET%20all.png)|
 |GET|/comments/:id|Retrieve comment by id|[Postman](./images/GET%20id.png)|
+|POST|/comments|Create a new comment|[Postman](./images/POST.png)|
 |PUT|/comments/:id|Update comment by id|[Postman](./images/PUT.png)|
 |DELETE|/comments/:id|Delete comment by id|[Postman](./images/DEL.png)|
 

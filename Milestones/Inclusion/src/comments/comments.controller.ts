@@ -23,6 +23,24 @@ export const getCommentById = async (req: Request, res: Response) => {
   }
 };
 
+// Create a comment
+export const createComment = async (req: Request, res: Response) => {
+  try {
+    const { verseId, commentText, translation } = req.body;
+
+    // Validate required fields
+    if (!verseId || !commentText || !translation) {
+      return res.status(400).json({ message: 'verseId, commentText, and translation are required' });
+    }
+
+    const newComment = await commentsDAO.createComment({ verseId, commentText, translation });
+    res.status(201).json(newComment);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to create comment' });
+  }
+};
+
+
 // PUT Update an existing comment
 export const updateComment = async (req: Request, res: Response) => {
   try {

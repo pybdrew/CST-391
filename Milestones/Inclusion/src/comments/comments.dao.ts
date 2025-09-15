@@ -13,6 +13,24 @@ export const getCommentById = async (id: number) => {
   const results = await execute<Comment[]>(commentQueries.readCommentById, [id]);
   return results.length > 0 ? results[0] : undefined;
 };
+
+// create a new comment
+export const createComment = async (comment: Partial<Comment>) => {
+  const { verseId, commentText, translation } = comment;
+
+  const result = await execute<OkPacket>(
+    commentQueries.createComment,
+    [verseId, commentText, translation ?? null]
+  );
+
+  return {
+    id: result.insertId,
+    verseId,
+    commentText,
+    translation: translation ?? null,
+  } as Comment;
+};
+
 // update an existing comment (text + translation) by id
 export const updateComment = async (comment: Comment) => {
   return execute<OkPacket>(

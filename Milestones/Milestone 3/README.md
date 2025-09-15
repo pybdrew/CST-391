@@ -3,12 +3,13 @@
 - 14 Sep 2025
 
 ## Introduction
-> [!NOTE]
-> This is refined upon [Milestone 2](../../Milestones/Milestone%202/README.md). 
+> [!NOTE]  
+> This is refined from [Milestone 2](../../Milestones/Milestone%202/README.md).  
+> Quick link to the [Code](../Inclusion/)
 
 > [!IMPORTANT] 
 > View [Challenges, Issues, and Lessons Learned](#challenges-issues-and-lessons-learned)  
-> Video for endpoints: [Loom Link](https://www.loom.com/share/6127053b3eb04a31be6f7b0c49c198cc?sid=72f7500e-fca3-4a24-b04a-dd243ac8e6e3)  
+> Video for endpoints: [Loom Link](https://www.loom.com/share/cfbcf69e927645738d62559586cd1502?sid=cadc7711-d72a-4856-9cea-a53214bda115)  
 > View PowerPoint .PDF version here: [Milestone 3 PowerPoint](./Milestone%203.pdf)  
 
 
