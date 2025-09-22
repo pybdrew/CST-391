@@ -3,8 +3,9 @@
 - 21 September 2025
   
 ## Introduction
-> ![Important]
+> [!Important]
 > [Code](../../musicapp/)
+
 In this activity, I developed the front end of a basic Music application by creating and implementing multiple components. I focused on handling various page events to make the application interactive and utilized data binding to connect the logic to the view templates. This process provided me with hands-on experience in structuring a front-end application, managing user interactions, and dynamically displaying data within the user interface.
 
 # Part 1 - Simple App 
