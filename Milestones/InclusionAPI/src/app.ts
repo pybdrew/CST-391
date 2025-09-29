@@ -2,6 +2,9 @@
 
 import express, { Request, Response } from "express";
 import commentsRouter from './comments/comments.routes';
+import booksRouter from './books/books.routes';
+import versesRouter from './verses/verses.routes';
+import translationsRouter from './translations/translations.routes';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
@@ -48,6 +51,13 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use('/', [commentsRouter]);
+
+app.use('/books', booksRouter);
+
+app.use('/verses', versesRouter);
+
+app.use('/translations', translationsRouter);
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

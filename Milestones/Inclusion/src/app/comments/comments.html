@@ -1,0 +1,34 @@
+<div class="container mt-3">
+  <h2>All Comments</h2>
+
+  <div *ngIf="loading" class="alert alert-info">Loading comments...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Translation filter -->
+  <div class="mb-3" *ngIf="translations.length > 1">
+    <label for="translation" class="form-label">Select Translation:</label>
+    <select id="translation" class="form-select" [(ngModel)]="selectedTranslation" (change)="applyFilter()">
+      <option *ngFor="let t of translations" [value]="t">{{ t }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="!loading && filteredComments.length === 0" class="alert alert-warning">
+    No comments available for this translation.
+  </div>
+
+  <ul *ngIf="!loading && filteredComments.length > 0" class="list-group">
+    <li *ngFor="let c of filteredComments" class="list-group-item">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <div>
+          <strong>{{ c.bookName }} {{ c.chapter }}:{{ c.verseNumber }}</strong>
+          — {{ c.comment_text }}
+          <small class="text-muted ms-2">({{ c.translation }})</small>
+        </div>
+        <div>
+          <button class="btn btn-sm btn-primary me-2" (click)="editComment(c.id)">Edit</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteComment(c.id)">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

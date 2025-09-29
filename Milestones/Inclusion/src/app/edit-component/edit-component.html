@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <h2>Edit Comment</h2>
+
+  <div *ngIf="loading" class="alert alert-info">Loading comment...</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <div *ngIf="!loading && !errorMessage">
+    <p>
+      <strong>{{ bookName }} {{ chapter }}:{{ verseNumber }}</strong>
+      — Translation: {{ translation }}
+    </p>
+
+    <form (ngSubmit)="submitEdit()">
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment</label>
+        <textarea id="comment" class="form-control" rows="3"
+                  [(ngModel)]="commentText" name="commentText"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success">Save</button>
+      <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "inclusion",
+  "version": "1.0.0",
+  "description": "Bible study application",
+  "main": "app.ts",
+  "scripts": {
+    "start:watch": "nodemon ./src/app.ts",
+    "start": "npx ts-node ./src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.9.2"
+  }
+}

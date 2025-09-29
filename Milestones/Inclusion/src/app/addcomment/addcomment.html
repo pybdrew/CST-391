@@ -1,0 +1,37 @@
+<div class="container mt-3">
+  <h2>Add Comment for Verse</h2>
+
+  <!-- Verse info -->
+  <div *ngIf="verse" class="mb-3">
+    <strong>
+      {{ booksMap[verse.book_id] || 'Book ' + verse.book_id }}
+      {{ verse.chapter }}:{{ verse.verseNumber }}
+    </strong>
+    - {{ verse.text }}
+  </div>
+
+  <!-- Confirmation for saved comment -->
+  <div *ngIf="savedComment" class="alert alert-success">
+    <strong>Comment saved!</strong>
+    <p>{{ savedComment }}</p>
+  </div>
+
+  <!-- Comment form -->
+  <form (ngSubmit)="submitComment()">
+    <div class="mb-3">
+      <label for="comment" class="form-label">Comment</label>
+      <textarea
+        id="comment"
+        class="form-control"
+        rows="3"
+        [(ngModel)]="commentText"
+        name="commentText"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit Comment</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">
+      Cancel
+    </button>
+  </form>
+</div>

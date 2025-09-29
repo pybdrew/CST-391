@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h1>Welcome to Inclusion</h1>
+  <p>
+    Inclusion is a Christian-themed personal study web app that allows you to read, add, edit, and delete personal study notes tied to Bible verses and translations.
+  </p>
+
+  <h3>Quick Links</h3>
+  <div class="mb-3">
+    <a class="btn btn-primary me-2" [routerLink]="['/books']">Browse Verses</a>
+    <a class="btn btn-secondary me-2" [routerLink]="['/comments']">My Comments</a>
+  </div>
+
+  <h3>Functionality Overview</h3>
+  <ul>
+    <li>View Bible verses across multiple translations</li>
+    <li>View, add, edit, and delete personal comments per verse</li>
+    <li>Filter comments by translation (e.g., KJV, ACV)</li>
+    <li>Sort and review comments efficiently</li>
+  </ul>
+
+  <h3>About Inclusion</h3>
+  <p>
+    Inclusion is built with an Angular front-end, providing an interactive UI for scripture study. The backend is implemented in TypeScript with Express/Node.js and uses a MySQL database. REST API endpoints handle CRUD operations for comments, ensuring seamless management of personal study notes.
+  </p>
+</div>
