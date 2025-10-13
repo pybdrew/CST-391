@@ -1,57 +1,85 @@
-import React, { useState } from "react";
-import Card from './Card'
+import React, { useState, useEffect } from "react";
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+// import { createMemoryHistory } from 'history';
+import SearchAlbum from './SearchAlbum';
+import NavBar from "./NavBar";
+import NewAlbum from "./NewAlbum";
+import OneAlbum from "./OneAlbum";
 import './App.css';
-
+import dataSource from './dataSource';
 
 const App = () => {
-    const [albumList, setAlbumList] = useState ([
-        {
-            artistId: 0,
-            artist: 'The Beatles',
-            title: 'Yellow Submarine',
-            description: 
-                'Yellow Submarine is the tenth studio album by English rock band the Beatles, released on 13 January 1969 in the United Satted and on 17 January 1969 in the United Kingdom.',
-            year: 1969,
-            image: 
-                'https://upload.wikimedia.org/wikipedia/en/6/6f/Beatles_Yellow_Submarine_move_poster.jpg'
-        },
-        {
-            artistId: 1,
-            artist: 'The Beatles',
-            title: 'Abbey Road',
-            description: 
-                'Abbey Road is the eleventh studio album by English rock band The Beatles, released on 26 September 1969 by Apple Records. The recording sessions for the album were the last in which all four Beatles participated.',
-            year: '1969',
-            image: 
-                'https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg'
-        },
-        {
-            artistId: 2,
-            artist: 'The Beatles',
-            title: 'Let It Be',
-            description: 
-                'Let It Be is the twelfth and final studio album by the English rock band The Beatles. It was released on 8 May 1970, almost a month after the group\'s break-up',
-            year: 1970,
-            image: 
-                'https://upload.wikimedia.org/wikipedia/en/7/7a/The_Beatles_-_Let_It_Be.png'
-        },
-    ]);
+    const [searchPhrase, setSearchPhrase] = useState('');
+    const [albumList, setAlbumList] = useState ([]);
+    const [currentlySelectedAlbumId, setCurrentlySelectedAlbumId] = useState(0);
+    let refresh = false;
 
-    const renderedList = () => {
-        return albumList.map((album) => {
-            return (
-                <Card
-                    key={album.artistId}
-                    albumTitle={album.title}
-                    albumDescription={album.description}
-                    buttonText='OK'
-                    imgURL={album.image} 
-                />
-            );
-        });
+    const loadAlbums = async () => {
+        const response = await dataSource.get('/albums');
+        
+        setAlbumList(response.data);
+    }
+
+    // Setup initialization callback
+    useEffect(() => {
+        // Update the album list
+        loadAlbums();
+    }, [refresh]);
+
+    const updateSearchResults = async (phrase) => {
+        console.log('phrase is ' + phrase);
+        setSearchPhrase(phrase);
+    }
+
+    const updateSingleAlbum = (id, navigate) => {
+        console.log('Update Single Album = ', id);
+        console.log('Update Single Album = ', navigate);
+        var indexNumber = 0;
+        for (var i = 0; i < albumList.length; ++i) {
+            if (albumList[i].id === id) indexNumber =i;
+        }
+        setCurrentlySelectedAlbumId(indexNumber);
+        console.log('update path', '/show/' + indexNumber);
+        navigate('/show/' + indexNumber);
     };
 
-    return <div className='container'>{renderedList()}</div>;
+    console.log('albumList', albumList);
+    const renderedList = albumList.filter((album) => {
+        if (
+            album.description.toLowerCase().includes(searchPhrase.toLowerCase()) ||
+            searchPhrase === ''
+        ) {
+            return true;
+        }
+        return false;
+    });
+
+    console.log('renderedList', renderedList);
+
+    return (
+        <BrowserRouter>
+            <NavBar />
+            <Routes>
+                <Route
+                    exact
+                    path='/'
+                    element={
+                        <SearchAlbum
+                            updateSearchResults={updateSearchResults}
+                            albumList={renderedList}
+                            updateSingleAlbum={updateSingleAlbum}
+                        />
+                    }
+                />
+                <Route exact path='/new' element={<NewAlbum />}/>
+                <Route
+                    exact
+                    path='/show/:albumId'
+                    element={<OneAlbum album={albumList[currentlySelectedAlbumId]}/>}
+                />
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default App;
