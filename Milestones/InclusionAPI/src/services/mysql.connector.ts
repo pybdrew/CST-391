@@ -1,6 +1,6 @@
 // re-used from music API
 
-import { createPool, Pool } from 'mysql';
+import { createPool, Pool } from 'mysql2';
 let pool: Pool | null = null;
 
 const initializeMySqlConnector = () => {
@@ -43,10 +43,15 @@ export const execute = <T>(query: string, params: string[] | Object): Promise<T>
 
         return new Promise<T>((resolve, reject) => {
             pool!.query(query, params, (error, results) => {
-                if (error) reject(error);
-                else resolve(results);
-            });
+            if (error) {
+                reject(error);
+            }
+            else {
+                resolve(results as T);
+            }
         });
+    });
+
     } catch (error) {
         console.error('[mysql.connector][execute][Error]: ', error);
         throw new Error('failed to execute MySql query');

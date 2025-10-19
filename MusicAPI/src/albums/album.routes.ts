@@ -7,6 +7,11 @@ router
     .get(AlbumsController.readAlbums);
 
 router
+  .route('/albums/:id')
+  .get(AlbumsController.readAlbumById);
+
+
+router
     .route('/albums/:artist')
     .get(AlbumsController.readAlbumsByArtist);
 

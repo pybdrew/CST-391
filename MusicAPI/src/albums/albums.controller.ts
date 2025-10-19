@@ -28,6 +28,31 @@ export const readAlbums: RequestHandler = async (req: Request, res: Response) =>
         });
     }
 };
+
+export const readAlbumById: RequestHandler = async (req: Request, res: Response) => {
+    try {
+        const albumId = parseInt(req.params.id as string, 10);
+        console.log('Fetching albumId:', albumId);
+
+        if (Number.isNaN(albumId)) {
+            return res.status(400).json({ message: "Invalid albumId parameter" });
+        }
+
+        const album = await AlbumDAO.readAlbumsByAlbumId(albumId);
+
+        if (!album) {
+            return res.status(404).json({ message: "Album not found" });
+        }
+
+        res.status(200).json(album);
+    } catch (error) {
+        console.error('[albums.controller][readAlbumById][Error]', error);
+        res.status(500).json({
+            message: 'There was an error fetching the album'
+        });
+    }
+};
+
 export const readAlbumsByArtist: RequestHandler = async (req: Request, res: Response) => {
     try {
         const albums = await AlbumDAO.readAlbumsByArtist(req.params.artist);

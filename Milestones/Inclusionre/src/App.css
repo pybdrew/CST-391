@@ -1,0 +1,27 @@
+.verse-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.verse-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.verse-ref {
+  font-weight: bold;
+}
+
+.verse-text {
+  flex: 1;
+}
+
+.verse-comment-btn {
+  padding: 2px 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
