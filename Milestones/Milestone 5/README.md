@@ -10,7 +10,7 @@
 
 > [!IMPORTANT]  
 > View [Challenges, Issues, and Lessons Learned](#challenges-issues-and-lessons-learned)  
-> Angular Front-End Demo: [Loom Link](https://www.loom.com/share/116e2bde603d4c4abf6e2bc24ffb7ff4?sid=2eff2943-e9a8-440c-85c3-55642bac3833)  
+> React Front-End Demo: [Loom Link](https://www.loom.com/share/116e2bde603d4c4abf6e2bc24ffb7ff4?sid=2eff2943-e9a8-440c-85c3-55642bac3833)  
 > View PowerPoint .PDF version here: [Milestone 5 PowerPoint](Milestone%205.pdf)  
 
 Inclusion is a Christian-themed personal study web app that enables users to read, update, and delete personal study notes tied to specific Bible verses and translations. While Milestone 3 focused on implementing the REST API with Express/Node.js and MySQL, Milestone 5 integrates a **React front-end** with this backend. The Angular application now provides interactive navigation, UI components for viewing verses and comments, and the ability to perform CRUD operations directly in the browser. This marks the project’s first milestone with full-stack functionality.  
