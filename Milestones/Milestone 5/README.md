@@ -52,7 +52,7 @@ Inclusion is a Christian-themed personal study web app that enables users to rea
 ![Front-end UML](./images/UML.png)
 
 **Back-end UML**
-![Back-end UML](./images/back-end%20UML.png)
+![Back-end UML](../Milestone%204/images/back-end%20UML.png)
 
 ## REST Endpoints
 (Unchanged from Milestone 3, now consumed by React UI)  
