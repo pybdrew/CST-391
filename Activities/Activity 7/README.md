@@ -5,7 +5,7 @@
 ## Introduction
 > [!NOTE]  
 > This activity builds upon [Activity 6](../Activity%206/README.md).  
-> Unfortunately due to time constraints not all optional task were completed.
+> Unfortunately, due to time constraints not all optional task were completed.
 
 >[!IMPORTANT]  
 > Quick link to [Code](../../music/)
